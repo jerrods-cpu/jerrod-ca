@@ -1,0 +1,39 @@
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div>
+      © {new Date().getFullYear()} Jerrod Schwartz
+    </div>
+
+    <div class="links">
+      <a href="https://www.linkedin.com/in/jerrod-schwartz-92b1917" rel="me">LinkedIn</a>
+      <a href="/publications">Publications</a>
+      <a href="/cv">CV</a>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    border-top: 1px solid var(--border);
+    padding: 32px 0 48px;
+    color: var(--muted);
+    font-size: 0.85rem;
+  }
+
+  .footer-inner {
+    display: flex;
+    justify-content: space-between;
+    gap: 24px;
+  }
+
+  .links {
+    display: flex;
+    gap: 20px;
+  }
+
+  @media (max-width: 600px) {
+    .footer-inner {
+      flex-direction: column;
+    }
+  }
+</style>

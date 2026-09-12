@@ -1,0 +1,63 @@
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="name" href="/">Jerrod Schwartz</a>
+
+    <nav aria-label="Primary navigation">
+      <a href="/research">Research</a>
+      <a href="/publications">Publications</a>
+      <a href="/patents">Patents</a>
+      <a href="/cv">CV</a>
+    </nav>
+  </div>
+</header>
+
+<style>
+  .site-header {
+    padding: 24px 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .header-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+  }
+
+  .name {
+    color: var(--text);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+  }
+
+  .name:hover {
+    text-decoration: none;
+  }
+
+  nav {
+    display: flex;
+    gap: 26px;
+    font-size: 0.9rem;
+  }
+
+  nav a {
+    color: var(--muted);
+  }
+
+  nav a:hover {
+    color: var(--text);
+  }
+
+  @media (max-width: 650px) {
+    .header-inner {
+      align-items: flex-start;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    nav {
+      flex-wrap: wrap;
+      gap: 12px 20px;
+    }
+  }
+</style>
