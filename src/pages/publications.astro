@@ -1,5 +1,211 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+
+const publications = [
+  {
+    year: 2026,
+    title:
+      "Individualized Longitudinal ctDNA Monitoring in Melanoma Using Multiplexed USE-PCR",
+    authors: [
+      "Fischer AG",
+      "Miller HA",
+      "Hall MB",
+      "Yadannapudi K",
+      "Jacky L",
+      "Alvarado J",
+      "Aguiar A",
+      "Clark N",
+      "Belitz P",
+      "Myslinski J",
+      "Flook P",
+      "Schwartz JJ",
+      "Linder MW",
+    ],
+    journal: "Molecular Diagnosis & Therapy",
+    citation: "30, 783–794",
+    doi: "10.1007/s40291-026-00862-5",
+    pubmed: "https://pubmed.ncbi.nlm.nih.gov/42393480/",
+  },
+  {
+    year: 2025,
+    title:
+      "Multiplexed, universal probe-based rare variant detection with USE-PCR",
+    authors: [
+      "Alvarado J",
+      "Jacky L",
+      "Yurk D",
+      "Aguiar A",
+      "Belitz P",
+      "Schwartz JJ",
+    ],
+    journal: "Scientific Reports",
+    citation: "15, 23947",
+    doi: "10.1038/s41598-025-08814-5",
+    pubmed: "https://pubmed.ncbi.nlm.nih.gov/40615528/",
+  },
+  {
+    year: 2024,
+    title:
+      "NSCLC Digital PCR Panel Returns Low-Input Sample Results Where Sequencing Fails",
+    authors: [
+      "Herdt LR",
+      "Berroteran P",
+      "Rajagopalan M",
+      "Brown BA",
+      "Schwartz JJ",
+    ],
+    journal: "Diagnostics",
+    citation: "14(3), 243",
+    doi: "10.3390/diagnostics14030243",
+    pubmed: "https://pubmed.ncbi.nlm.nih.gov/38337759/",
+  },
+  {
+    year: 2023,
+    title:
+      "A rapid, multiplex digital PCR assay to detect gene variants and fusions in non-small cell lung cancer",
+    authors: [
+      "Leatham B",
+      "McNall K",
+      "Subramanian HKK",
+      "Jacky L",
+      "Alvarado J",
+      "Yurk D",
+      "Wang M",
+      "Green DC",
+      "Tsongalis GJ",
+      "Rajagopal A",
+      "Schwartz JJ",
+    ],
+    journal: "Molecular Oncology",
+    citation: "17(11), 2221–2234",
+    doi: "10.1002/1878-0261.13523",
+    pubmed: "https://pubmed.ncbi.nlm.nih.gov/37714814/",
+  },
+  {
+    year: 2021,
+    title:
+      "Virtual-Partition Digital PCR for High-Precision Chromosomal Counting Applications",
+    authors: [
+      "Jacky L",
+      "Yurk D",
+      "Alvarado J",
+      "Leatham B",
+      "Schwartz J",
+      "Annaloro J",
+      "MacDonald C",
+      "Rajagopal A",
+    ],
+    journal: "Analytical Chemistry",
+    citation: "93(51), 17020–17029",
+    doi: "10.1021/acs.analchem.1c03527",
+    pubmed: "https://pubmed.ncbi.nlm.nih.gov/34905685/",
+  },
+  {
+    year: 2016,
+    title:
+      "Multiplex pairwise assembly of array-derived DNA oligonucleotides",
+    authors: [
+      "Klein JC",
+      "Lajoie MJ",
+      "Schwartz JJ",
+      "Strauch EM",
+      "Nelson J",
+      "Baker D",
+      "Shendure J",
+    ],
+    journal: "Nucleic Acids Research",
+    citation: "44(5), e43",
+    doi: "10.1093/nar/gkv1177",
+    pubmed: "https://pubmed.ncbi.nlm.nih.gov/26553805/",
+  },
+  {
+    year: 2014,
+    title: "Primate evolution of the recombination regulator PRDM9",
+    authors: ["Schwartz JJ", "Roach DR", "Thomas JH", "Shendure J"],
+    journal: "Nature Communications",
+    citation: "5, 4370",
+    doi: "10.1038/ncomms5370",
+    pubmed: "https://pubmed.ncbi.nlm.nih.gov/25001002/",
+  },
+  {
+    year: 2012,
+    title:
+      "Capturing native long-range contiguity by in situ library construction and optical sequencing",
+    authors: ["Schwartz JJ", "Lee C", "Hiatt JB", "Adey A", "Shendure J"],
+    journal: "Proceedings of the National Academy of Sciences",
+    citation: "109(46), 18749–18754",
+    doi: "10.1073/pnas.1202680109",
+    pubmed: "https://pubmed.ncbi.nlm.nih.gov/23112150/",
+  },
+  {
+    year: 2012,
+    title:
+      "Accurate gene synthesis with tag-directed retrieval of sequence-verified DNA molecules",
+    authors: ["Schwartz JJ", "Lee C", "Shendure J"],
+    journal: "Nature Methods",
+    citation: "9, 913–915",
+    doi: "10.1038/nmeth.2137",
+    pubmed: "https://pubmed.ncbi.nlm.nih.gov/22886093/",
+  },
+  {
+    year: 2011,
+    title:
+      "Exome sequencing in sporadic autism spectrum disorders identifies severe de novo mutations",
+    authors: [
+      "O’Roak BJ",
+      "Deriziotis P",
+      "Lee C",
+      "Vives L",
+      "Schwartz JJ",
+      "Girirajan S",
+      "Karakoc E",
+      "MacKenzie AP",
+      "Ng SB",
+      "Baker C",
+      "Rieder MJ",
+      "Nickerson DA",
+      "Bernier R",
+      "Fisher SE",
+      "Shendure J",
+      "Eichler EE",
+    ],
+    journal: "Nature Genetics",
+    citation: "43, 585–589",
+    doi: "10.1038/ng.835",
+    pubmed: "https://pubmed.ncbi.nlm.nih.gov/21572417/",
+  },
+  {
+    year: 2010,
+    title:
+      "Colloidal lenses allow high-temperature single-molecule imaging and improve fluorophore photostability",
+    authors: ["Schwartz JJ", "Stavrakis S", "Quake SR"],
+    journal: "Nature Nanotechnology",
+    citation: "5, 127–132",
+    doi: "10.1038/nnano.2009.452",
+    pubmed: "https://pubmed.ncbi.nlm.nih.gov/20023643/",
+  },
+  {
+    year: 2009,
+    title:
+      'Single molecule measurement of the "speed limit" of DNA polymerase',
+    authors: ["Schwartz JJ", "Quake SR"],
+    journal: "Proceedings of the National Academy of Sciences",
+    citation: "106(48), 20294–20299",
+    doi: "10.1073/pnas.0907404106",
+    pubmed: "https://pubmed.ncbi.nlm.nih.gov/19906998/",
+  },
+  {
+    year: 2007,
+    title:
+      "High density single molecule surface patterning with colloidal epitaxy",
+    authors: ["Schwartz JJ", "Quake SR"],
+    journal: "Applied Physics Letters",
+    citation: "91, 083902",
+    doi: "10.1063/1.2772762",
+  },
+];
+
+const isJerrod = (author: string) => author.includes("Schwartz");
 ---
 
 <BaseLayout title="Publications | Jerrod Schwartz">
@@ -7,7 +213,145 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     <div class="container narrow">
       <div class="eyebrow">Scientific work</div>
       <h1>Publications</h1>
-      <p>Selected and complete publications will appear here.</p>
+
+      <p class="intro">
+        Peer-reviewed publications spanning genomics, molecular diagnostics,
+        synthetic biology, and single-molecule biophysics.
+      </p>
+
+      <div class="publications">
+        {
+          publications.map((publication) => (
+            <article class="publication">
+              <div class="year">{publication.year}</div>
+
+              <div class="publication-content">
+                <h2>{publication.title}</h2>
+
+                <p class="authors">
+                  {publication.authors.map((author, index) => (
+                    <>
+                      <span class:list={{ me: isJerrod(author) }}>
+                        {author}
+                      </span>
+                      {index < publication.authors.length - 1 ? ", " : ""}
+                    </>
+                  ))}
+                </p>
+
+                <p class="citation">
+                  <em>{publication.journal}</em>{" "}
+                  {publication.citation} ({publication.year})
+                </p>
+
+                <div class="publication-links">
+                  <a
+                    href={`https://doi.org/${publication.doi}`}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    DOI
+                  </a>
+
+                  {publication.pubmed && (
+                    <a
+                      href={publication.pubmed}
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      PubMed
+                    </a>
+                  )}
+                </div>
+              </div>
+            </article>
+          ))
+        }
+      </div>
     </div>
   </section>
 </BaseLayout>
+
+<style>
+  .intro {
+    margin-bottom: 2.5rem;
+  }
+
+  .publications {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .publication {
+    display: grid;
+    grid-template-columns: 4rem 1fr;
+    gap: 1.25rem;
+    padding: 1.5rem 0;
+    border-top: 1px solid color-mix(in srgb, currentColor 18%, transparent);
+  }
+
+  .publication:last-child {
+    border-bottom: 1px solid
+      color-mix(in srgb, currentColor 18%, transparent);
+  }
+
+  .year {
+    font-size: 0.9rem;
+    font-weight: 600;
+    opacity: 0.55;
+    padding-top: 0.2rem;
+  }
+
+  .publication h2 {
+    margin: 0 0 0.4rem;
+    font-size: 1.1rem;
+    line-height: 1.35;
+  }
+
+  .authors,
+  .citation {
+    margin: 0.25rem 0;
+    line-height: 1.55;
+  }
+
+  .authors {
+    font-size: 0.95rem;
+  }
+
+  .me {
+    font-weight: 700;
+  }
+
+  .citation {
+    font-size: 0.95rem;
+    opacity: 0.72;
+  }
+
+  .publication-links {
+    display: flex;
+    gap: 1rem;
+    margin-top: 0.55rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+  }
+
+  .publication-links a {
+    text-decoration: none;
+  }
+
+  .publication-links a:hover {
+    text-decoration: underline;
+  }
+
+  @media (max-width: 600px) {
+    .publication {
+      grid-template-columns: 1fr;
+      gap: 0.35rem;
+    }
+
+    .year {
+      padding-top: 0;
+    }
+  }
+</style>
