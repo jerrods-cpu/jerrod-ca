@@ -183,6 +183,10 @@ const publications = [
     citation: "5, 127–132",
     doi: "10.1038/nnano.2009.452",
     pubmed: "https://pubmed.ncbi.nlm.nih.gov/20023643/",
+    highlight: {
+      label: "Cover",
+      url: "https://www.nature.com/nnano/volumes/5/issues/2",
+    },
   },
   {
     year: 2009,
@@ -193,6 +197,10 @@ const publications = [
     citation: "106(48), 20294–20299",
     doi: "10.1073/pnas.0907404106",
     pubmed: "https://pubmed.ncbi.nlm.nih.gov/19906998/",
+    highlight: {
+      label: "Nature Highlight",
+      url: "https://www.nature.com/articles/462141a",
+    },
   },
   {
     year: 2007,
@@ -260,6 +268,16 @@ const isJerrod = (author: string) => author.includes("Schwartz");
                       rel="noreferrer"
                     >
                       PubMed
+                    </a>
+                  )}
+
+                  {publication.highlight && (
+                    <a
+                      href={publication.highlight.url}
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      {publication.highlight.label}
                     </a>
                   )}
                 </div>
